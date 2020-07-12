@@ -20,7 +20,7 @@
             
             </th>
             <td>
-            <?php echo $data?> 
+                <?php echo $data?> 
             </td>
         </tr>        
         </table>
