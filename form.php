@@ -9,6 +9,7 @@
 <body>
     <!--Bagian validasi input form-->
     <?php
+        include 'table_pendaftar.php';
         $namaErr = $emailErr = $genderErr = $passwordErr = $alamatErr = $jenisusahaErr = $modalusahaErr = "";
         $nama = $email = $gender = $password = $jenisusaha = $modalusaha = $alamat = "";
     if($_SERVER["REQUEST_METHOD"] == "POST"){

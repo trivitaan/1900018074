@@ -7,65 +7,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-    <!--Bagian validasi input form-->
-    <?php
-        $namaErr = $emailErr = $genderErr = $passwordErr = $alamatErr = $jenisusahaErr = $modalusahaErr = "";
-        $nama = $email = $gender = $password = $jenisusaha = $modalusaha = $alamat = "";
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-        if (empty($_POST["nama"])){
-            $namaErr = "Nama perlu diisi";
-        }else{
-            $nama = test_input($_POST["nama"]);
+    <?php 
+        if(file_exists("datapendaftar.txt")){
+            $data = file_get_contents("datapendaftar.txt");
         }
-        if (empty($_POST["alamat"])){
-            $alamatErr = "Alamat perlu diisi";
-        }else{
-            $alamat = test_input($_POST["alamat"]);
-        }
-        if (empty($_POST["modalusaha"])){
-            $modalusahaErr = "Modal usaha perlu diisi";
-        }else{
-            $modalusaha = test_input($_POST["modalusaha"]);
-        }
-        if (empty($_POST["jenisusaha"])){
-            $jenisusahaErr = "Jenis usaha perlu diisi";
-        }else{
-            $jenisusaha = test_input($_POST["jenisusaha"]);
-        }
-        if (empty($_POST["email"])){
-            $emailErr = "Email perlu diisi";
-        }else{
-            $email = test_input($_POST["email"]);
-        }
-        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-            $emailErr = "Format email salah";
-        }
-        if (empty($_POST["gender"])){
-            $genderErr = "Gender perlu diisi";
-        }else{
-            $gender = test_input($_POST["gender"]);
-        }
-        if (empty($_POST["password"])){
-            $passwordErr = "Password perlu diisi";
-        }else{
-            $password = test_input($_POST["password"]);
-        }
-    }
-    //Apabila data sudah diinputkan maka lakukan function test_input
-    
-    function test_input($data){
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
-    //write data ke file txt
-
     ?>
     <!--Tampilan dalam Browser-->
     <div class="container" style="padding-top: 20px; padding : 20px">
         <table>
+        <tr>
+            <th>
+            
+            </th>
+            <td>
+            <?php echo $data?> 
+            </td>
+        </tr>        
         </table>
     </div>
         
