@@ -141,8 +141,6 @@
             fwrite($fp, 'Rencana Modal Usaha : ');
             fwrite($fp, $modalusaha);
             fclose($fp);
-
-            // the content of 'data.txt' is now 123 and not 23!
         ?>
        
         </div>
